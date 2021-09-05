@@ -1,0 +1,7 @@
+# C++ Executables
+*.exe
+
+#Java Executables
+*.class
+*.jar
+
