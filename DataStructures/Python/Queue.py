@@ -3,7 +3,7 @@ class Node:
         self.node = val
         self.next = None
 
-class LinkedList:
+class Queue:
     def __init__(self):
         self.head = None
         self.tail = None
@@ -15,6 +15,7 @@ class LinkedList:
         if self.head is None:
             self.head = new_node
             self.tail = new_node
+            return
 
         elif self.head == self.tail:
             self.tail = new_node
@@ -23,17 +24,6 @@ class LinkedList:
         else:
             self.tail.next = new_node
             self.tail = new_node
-
-    def push(self, val):
-        new_node = Node(val)
-
-        if self.head is None:
-            self.head = new_node
-            self.tail = new_node
-            return
-        
-        new_node.next = self.head
-        self.head = new_node
 
     
     def pop(self):
@@ -56,7 +46,7 @@ class LinkedList:
 
 
 if __name__ == "__main__":
-    a = LinkedList()
+    a = Queue()
     a.append(1)
     print(a)
     a.append(2)
@@ -78,7 +68,7 @@ if __name__ == "__main__":
     b.append(3)
     b.append(5)
     print(b)
-    b.pop() # This is behavoiur would signal stack
+    b.popleft() # This behaviour would signal queue
     print(b)
     b.popleft() # This behaviour would signal queue
     print(b)

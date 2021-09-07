@@ -3,25 +3,12 @@ package Java;
 // the project to specify where the object originates from.
 // import Java.GenericNode;
 
-public class LinkedList<T>{
+public class Queue<T>{
     public GenericNode<T> head;
     public GenericNode<T> tail;
-    public LinkedList(){
+    public Queue(){
         head = null;
         tail = null;
-    }
-
-    public void push(T val){
-        GenericNode<T> new_node = new GenericNode<>(val);
-        if (head == null){
-            head = new_node;
-            tail = head;
-        }
-        else{
-            new_node.next = head;
-            head = new_node;
-        }
-
     }
 
     public void append(T val){
@@ -74,11 +61,11 @@ public class LinkedList<T>{
     }
 
     public static void main(String[] args) {
-        LinkedList<Integer> myList = new LinkedList<>();
+        Queue<Integer> myList = new Queue<>();
 
-        myList.push(1);
-        myList.push(2);
-        myList.push(3);
+        myList.append(1);
+        myList.append(2);
+        myList.append(3);
         myList.print();
         myList.pop();
         myList.print();
@@ -86,7 +73,7 @@ public class LinkedList<T>{
         myList.pop();
         myList.pop();
         myList.print();
-        myList.push(5);
+        myList.append(5);
         myList.print();
     }
 }

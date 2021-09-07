@@ -25,12 +25,11 @@ class Stack:
         result = ""
         temp = self.head
         while(temp != None):
-            result += f"{temp.node} ->"
+            if temp.next == None:
+                result += f"{temp.node}"
+            else:
+                result += f"{temp.node} ->"
             temp = temp.next
-    
-
-        return result
-
 
 if __name__ == "__main__":
     a = Stack()
@@ -46,3 +45,15 @@ if __name__ == "__main__":
     print(a)
     a.append(7)
     print(a)
+
+    from collections import deque
+    b = deque()
+    b.append(1)
+    print(b)
+    b.append(2)
+    b.append(3)
+    b.append(5)
+    print(b)
+    b.pop() # This is behavoiur would signal stack
+    b.pop()
+    print(b)
