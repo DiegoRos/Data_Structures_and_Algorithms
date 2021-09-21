@@ -3,10 +3,13 @@ package Java;
 // the project to specify where the object originates from.
 // import Java.GenericNode;
 
-public class Queue<T>{
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class MyQueue<T>{
     public GenericNode<T> head;
     public GenericNode<T> tail;
-    public Queue(){
+    public MyQueue(){
         head = null;
         tail = null;
     }
@@ -61,7 +64,7 @@ public class Queue<T>{
     }
 
     public static void main(String[] args) {
-        Queue<Integer> myList = new Queue<>();
+        MyQueue<Integer> myList = new MyQueue<>();
 
         myList.append(1);
         myList.append(2);
@@ -75,5 +78,19 @@ public class Queue<T>{
         myList.print();
         myList.append(5);
         myList.print();
+
+        // Java implementation:
+        Queue<Integer> javaList = new LinkedList<>(); // Queue is an interface, therefore we cannot create an object of type Queue.
+        javaList.add(1);
+        javaList.add(2);
+        javaList.add(3);
+        javaList.add(4);
+        javaList.add(5);
+        System.out.println(javaList);
+
+        javaList.remove();// Removes value if found or index
+        javaList.remove(); 
+        javaList.remove();
+        System.out.println(javaList);
     }
 }

@@ -1,12 +1,13 @@
 package Java;
+import java.util.LinkedList;
 //If they are in the same package java will recognize the object and the next import is not required, if not use the package declaration in
 // the project to specify where the object originates from.
 // import Java.GenericNode;
 
-public class LinkedList<T>{
+public class MyLinkedList<T>{
     public GenericNode<T> head;
     public GenericNode<T> tail;
-    public LinkedList(){
+    public MyLinkedList(){
         head = null;
         tail = null;
     }
@@ -56,6 +57,7 @@ public class LinkedList<T>{
         return temp;
     }
 
+    // A toString() method can be overriden to produce a System.out.print or println representation.
     public void print(){
         if(head == null){
             System.out.println("Stack is Empty");
@@ -74,7 +76,7 @@ public class LinkedList<T>{
     }
 
     public static void main(String[] args) {
-        LinkedList<Integer> myList = new LinkedList<>();
+        MyLinkedList<Integer> myList = new MyLinkedList<>();
 
         myList.push(1);
         myList.push(2);
@@ -88,5 +90,21 @@ public class LinkedList<T>{
         myList.print();
         myList.push(5);
         myList.print();
+
+        // Java implementation:
+        LinkedList<Integer> javaList = new LinkedList<>();
+        javaList.add(1);
+        javaList.add(2);
+        javaList.add(3);
+        javaList.addFirst(5);// Adds at beginning of list
+        javaList.add(2, 7); // Adds at a specific index
+        System.out.println(javaList);
+
+        javaList.remove(2);// Removes value if found or index
+        javaList.removeFirst(); // Removes first
+        javaList.removeLast(); // Removes last
+        System.out.println(javaList);
+
+        // This can also be written as a vector
     }
 }

@@ -3,10 +3,12 @@ package Java;
 // the project to specify where the object originates from.
 // import Java.GenericNode;
 
-public class Stack<T>{
+import java.util.Stack;
+
+public class MyStack<T>{
     public GenericNode<T> head;
     public GenericNode<T> tail;
-    public Stack(){
+    public MyStack(){
         head = null;
     }
 
@@ -50,7 +52,7 @@ public class Stack<T>{
     }
 
     public static void main(String[] args) {
-        LinkedList<Integer> myList = new LinkedList<>();
+        MyStack<Integer> myList = new MyStack<>();
 
         myList.push(1);
         myList.push(2);
@@ -64,5 +66,19 @@ public class Stack<T>{
         myList.print();
         myList.push(5);
         myList.print();
+
+        // Java implementation:
+        Stack<Integer> javaList = new Stack<>();
+        javaList.push(1);
+        javaList.push(2);
+        javaList.push(3);
+        javaList.push(4);
+        javaList.push(5);
+        System.out.println(javaList);
+
+        javaList.pop();// Removes value if found or index
+        javaList.pop(); // Removes first
+        javaList.pop(); // Removes last
+        System.out.println(javaList);
     }
 }
