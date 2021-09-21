@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "algorithm": "cpp",
-        "deque": "cpp",
-        "queue": "cpp",
-        "stack": "cpp",
-        "xutility": "cpp"
-    }
-}
